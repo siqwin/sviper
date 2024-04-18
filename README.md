@@ -61,7 +61,7 @@ The `@Sviper` annotation accepts several parameters.
 
 ## Sviper module architecture
 
-![Sviper Module](/docs/module.svg)
+![Sviper Module](https://github.com/siqwin/mask_text_input_formatter/assets/49272216/d1326b9b-be30-4924-b734-0f6556998998)
 
 Sviper consists of five main parts: View, State, Presenter, Interactor and Router.
 

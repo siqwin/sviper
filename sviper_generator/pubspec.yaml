@@ -1,13 +1,13 @@
 name: sviper_generator
 description: Generator for Sviper
 repository: https://github.com/siqwin/sviper
-version: 1.1.4
+version: 1.1.5
 
 environment:
   sdk: ^3.0.0
 
 dependencies:
-  sviper: ^1.1.4
+  sviper: ^1.1.5
 
   built_collection: ^5.0.0
   path: ^1.6.0
