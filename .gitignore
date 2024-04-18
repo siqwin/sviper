@@ -1,0 +1,9 @@
+**/.idea/
+**/*.iml
+**/private/**
+**/bin/
+**/sviper_example/
+
+**/.dart_tool/
+**/pubspec.lock
+**/pubspec_overrides.yaml

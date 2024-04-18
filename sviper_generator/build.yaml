@@ -1,0 +1,7 @@
+builders:
+  sviper_generator:
+    import: "package:sviper_generator/sviper_generator.dart"
+    builder_factories: ["createSviperBuilder"]
+    build_extensions: {".dart": [".sviper.dart"]}
+    auto_apply: dependents
+    build_to: source
