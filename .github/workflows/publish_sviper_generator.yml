@@ -1,0 +1,14 @@
+name: Publish sviper_generator to pub.dev
+
+on:
+  push:
+    tags:
+      - 'sviper_generator-v[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  publish:
+    permissions:
+      id-token: write
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+       working-directory: sviper_generator

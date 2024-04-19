@@ -17,7 +17,7 @@ In the pubspec.yaml of your flutter project, add the following dependency:
 dependencies:
   sviper: ^1.0.0
 
-dev_dependency:
+dev_dependencies:
   build_runner: any
   sviper_generator: ^1.0.0
 ```
