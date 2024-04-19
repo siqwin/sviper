@@ -74,20 +74,26 @@ linter:
     - avoid_void_async
     - avoid_web_libraries_in_flutter
     - await_only_futures
+    - camel_case_extensions
     - camel_case_types
     - cancel_subscriptions
     - close_sinks
+    - collection_methods_unrelated_type
     - constant_identifier_names
     - control_flow_in_finally
     - curly_braces_in_flow_control_structures
+    - dangling_library_doc_comments
     - depend_on_referenced_packages
     - empty_catches
     - empty_constructor_bodies
     - empty_statements
     - exhaustive_cases
+    - file_names
     - hash_and_equals
     - implementation_imports
+    - implicit_call_tearoffs
     - join_return_with_assignment
+    - library_annotations
     - library_names
     - library_prefixes
     - library_private_types_in_public_api
@@ -97,7 +103,9 @@ linter:
     - no_leading_underscores_for_library_prefixes
     - no_leading_underscores_for_local_identifiers
     - no_logic_in_create_state
+    - no_wildcard_variable_uses
     - non_constant_identifier_names
+    - null_check_on_nullable_type_parameter
     - null_closures
     - only_throw_errors
     - overridden_fields
@@ -133,7 +141,9 @@ linter:
     - prefer_spread_collections
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
+    - provide_deprecation_message
     - recursive_getters
+    - secure_pubspec_urls
     - sized_box_for_whitespace
     - slash_for_doc_comments
     - sort_child_properties_last
@@ -141,6 +151,7 @@ linter:
     - throw_in_finally
     - type_annotate_public_apis
     - type_init_formals
+    - type_literal_in_constant_pattern
     - unawaited_futures
     - unnecessary_await_in_return
     - unnecessary_brace_in_string_interps
@@ -166,5 +177,6 @@ linter:
     - use_key_in_widget_constructors
     - use_rethrow_when_possible
     - use_string_buffers
+    - use_string_in_part_of_directives
     - valid_regexps
     - void_checks

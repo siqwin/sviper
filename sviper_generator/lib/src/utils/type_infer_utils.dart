@@ -23,7 +23,7 @@ class TypeInferUtils {
       result.add(TypeReference(
         (t) => t
           ..symbol = parentGenericParams == null ? element.name : parentGenericParams[i].symbol
-          ..url = null
+          ..url = parentGenericParams == null ? null : parentGenericParams[i].url
           ..bound = bound,
       ));
     }
@@ -44,7 +44,10 @@ class TypeInferUtils {
     }
   }
 
-  static String? getPackageUrlForType(TypeParameterElement parent, DartType elementBound) {
+  static String? getPackageUrlForType(Element parent, DartType elementBound) {
+    if (elementBound.isDartType) {
+      return null;
+    }
     final curUri = Uri.tryParse(elementBound.element?.location?.components.firstOrNull ?? elementBound.element?.source?.uri.toString() ?? "");
     if (curUri == null || curUri.scheme != "package") {
       return null;
@@ -66,6 +69,6 @@ class TypeInferUtils {
         }
       }
     }
-    return elementBound.isDartType ? null : AssetId.resolve(curUri).uri.toString();
+    return  elementBound.element?.library?.source.uri.toString() ?? elementBound.element?.source?.uri.toString() ?? AssetId.resolve(curUri).uri.toString();
   }
 }

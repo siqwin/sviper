@@ -127,6 +127,7 @@ class Fixer {
                 offset: offset,
                 length: 0,
                 replace: "\n$targetDirectiveSource",
+                priority: -1,
               ));
             }
           }
@@ -156,6 +157,7 @@ class Fixer {
               offset: sourceUri.offset,
               length: sourceUri.length,
               replace: targetDirectiveSource,
+              priority: -1,
             ));
           }
         }

@@ -1,3 +1,13 @@
+## 1.1.10
+
+fix: Type parameters of extended module
+fix: Bypass import fixer when no other corrections are identified
+build: update dependencies
+
+## 1.1.9
+
+build: update dependencies
+
 ## 1.1.8
 
 build: change dependencies

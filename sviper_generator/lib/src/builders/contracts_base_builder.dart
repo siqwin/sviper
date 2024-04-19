@@ -300,13 +300,12 @@ class ContractsBaseBuilder extends GeneratorClassBase {
                   ..name = "view"
                   ..type = const Reference("SviperView")))
                 ..body = Code("""
-  final curView = view as ${emitter.emitType(viewBaseTarget.ref.unbound())};
-  ${interactorBaseTarget != null ? "final interactor = build${i.options.interactor.cap}(curView.context);" : ""}
+  ${interactorBaseTarget != null ? "final interactor = build${i.options.interactor.cap}(view.context);" : ""}
   final configuration = ${emitter.emitType(configurationBase.ref.unbound())}(
     state: ${stateBaseTarget != null ? "build${i.options.state.cap}(${interactorBaseTarget != null ? "interactor" : ""})" : "null"},
     input: ${inputTargetRef != null ? "input" : null},
     interactor: ${interactorBaseTarget != null ? "interactor" : "null"},
-    router: ${routerBaseTarget != null ? "build${i.options.router.cap}(curView.context)" : "null"},
+    router: ${routerBaseTarget != null ? "build${i.options.router.cap}(view.context)" : "null"},
   );
   return buildPresenter(configuration);
                 """)),

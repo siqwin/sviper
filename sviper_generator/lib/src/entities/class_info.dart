@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/type.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:collection/collection.dart';
 import 'package:path/path.dart';
@@ -13,7 +14,7 @@ import 'package:sviper_generator/src/extensions/string_extension.dart';
 import 'package:sviper_generator/src/entities/constants.dart';
 import 'package:sviper_generator/src/entities/filename_case_type.dart';
 import 'package:sviper_generator/src/entities/generator_options.dart';
-import 'package:sviper_generator/src/utils/TypeInferUtils.dart';
+import 'package:sviper_generator/src/utils/type_infer_utils.dart';
 import 'package:sviper_generator/src/entities/generator_annotation.dart';
 
 class ClassCommonInfo {
@@ -121,15 +122,25 @@ class ClassInfo implements ClassCommonInfo {
     final extendClassElement = extendClassType?.element;
     ClassInfo? extendsClassInfo;
 
+
+
     if (extendClassElement != null) {
       final extendClassAnnotation = extendClassElement.metadata.firstWhereOrNull((element) => element.toString().contains("@Sviper"));
       if (extendClassElement is ClassElement && extendClassAnnotation != null) {
         final annotationReader = ConstantReader(extendClassAnnotation.computeConstantValue());
-        if (genericParams.length != extendClassElement.typeParameters.length) {
+        if (extendClassType is InterfaceType && extendClassType.typeArguments.isNotEmpty) {
+          extendsClassInfo = ClassInfo.fromElementAnnotation(extendClassElement, GeneratorAnnotation.fromAnnotation(annotationReader), options, extendClassType.typeArguments.map((e) {
+            return TypeReference((t) => t
+              ..symbol = e.getDisplayString(withNullability: false)
+              ..url = TypeInferUtils.getPackageUrlForType(classElement, e)
+            );
+          }).toList());
+        } else if (genericParams.length != extendClassElement.typeParameters.length) {
           // TODO check bound
           throw InvalidGenerationSourceError("Extend class have different generic params", element: classElement);
+        } else {
+          extendsClassInfo = ClassInfo.fromElementAnnotation(extendClassElement, GeneratorAnnotation.fromAnnotation(annotationReader), options, genericParams);
         }
-        extendsClassInfo = ClassInfo.fromElementAnnotation(extendClassElement, GeneratorAnnotation.fromAnnotation(annotationReader), options, genericParams);
       } else {
         throw InvalidGenerationSourceError("Extend class type must have @Sviper annotation", element: classElement);
       }

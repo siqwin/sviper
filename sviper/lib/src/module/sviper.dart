@@ -1,4 +1,6 @@
 /// Module parts
+library;
+
 import 'package:flutter/material.dart';
 
 part 'sviper_configuration.dart';

@@ -60,7 +60,7 @@ abstract class GeneratorClassBase extends GeneratorBase {
           formatter: formatCode,
         );
         var fixList = fixer.getFixList();
-        if (fixList.isNotEmpty) {
+        if (fixList.isNotEmpty && fixList.any((element) => element.priority >= 0)) {
           fixList = fixList.indexed
               .sorted((a, b) {
                 var cmp = b.$2.offset.compareTo(a.$2.offset);
