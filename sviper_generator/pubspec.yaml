@@ -1,12 +1,15 @@
 name: sviper_generator
 description: Generator for Sviper (architectural pattern for Flutter projects, inspired by the VIPER architecture).
 repository: https://github.com/siqwin/sviper
-version: 1.1.10
+version: 1.1.11
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0 <4.0.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
   analyzer: ">=5.1.0 <7.0.0"
   build: ^2.1.1
   build_test: ^2.1.6

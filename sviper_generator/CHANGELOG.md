@@ -1,3 +1,7 @@
+## 1.1.11
+
+build: update dependencies
+
 ## 1.1.10
 
 fix: Type parameters of extended module
