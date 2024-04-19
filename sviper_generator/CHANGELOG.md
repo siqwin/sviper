@@ -1,3 +1,7 @@
+## 1.1.8
+
+build: change dependencies
+
 ## 1.1.7
 
 docs: update the documentation

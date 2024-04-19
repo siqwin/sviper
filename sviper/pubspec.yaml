@@ -1,10 +1,11 @@
 name: sviper
 description: Sviper is an architectural pattern for Flutter projects, inspired by the VIPER architecture.
 repository: https://github.com/siqwin/sviper
-version: 1.1.7
+version: 1.1.8
 
 environment:
-  sdk: ^3.0.0
+  sdk: ">=3.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:

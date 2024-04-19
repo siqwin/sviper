@@ -26,6 +26,7 @@ abstract class SviperWidget extends StatefulWidget {
 
 /// Base class for Page module builder
 abstract class SviperPage<Output> extends SviperWidget {
+  /// The name of the page
   final String name;
   final Object _input;
 

@@ -1,3 +1,4 @@
+/// Annotation for module generator
 class Sviper {
   /// Specifies whether the module has an Input
   final bool? hasInput;
