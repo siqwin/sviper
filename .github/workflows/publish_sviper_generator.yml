@@ -7,8 +7,22 @@ on:
 
 jobs:
   publish:
+    environment: pub.dev
     permissions:
       id-token: write
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    with:
-       working-directory: sviper_generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v1.5.3
+        with:
+          channel: "stable"
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        working-directory: sviper_generator
+        run: dart pub get
+      - name: Dart format
+        working-directory: sviper_generator
+        run: dart format .
+      - name: Publish
+        working-directory: sviper_generator
+        run: dart pub publish --force
