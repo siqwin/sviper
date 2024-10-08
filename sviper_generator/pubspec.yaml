@@ -21,7 +21,7 @@ dependencies:
   path: ^1.6.0
   recase: ^4.1.0
   source_gen: ^1.2.3
-  sviper: ^1.1.7
+  sviper: ^1.1.10
 
 dev_dependencies:
   build_runner: '>=2.0.0 <3.0.0'

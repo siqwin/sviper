@@ -6,6 +6,7 @@ abstract class SviperPresenter {
   final SviperInteractor? _interactor;
   final SviperRouter? _router;
 
+  // ignore: prefer_final_fields
   Object? _input;
   bool _disposed = false;
 
