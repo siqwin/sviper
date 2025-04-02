@@ -13,7 +13,7 @@ Builder createSviperBuilder([BuilderOptions? options]) {
     SviperGenerator(generatorOptions),
     generatedExtension: ".sviper.dart",
     allowSyntaxErrors: true,
-    formatOutput: (v) => v,
+    formatOutput: (s, v) => s,
     options: options,
   );
 }

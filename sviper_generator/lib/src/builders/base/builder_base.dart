@@ -6,7 +6,7 @@ import 'package:sviper_generator/src/entities/module_description.dart';
 import 'package:sviper_generator/src/entities/class_info.dart';
 
 
-final _codeFormatter = DartFormatter(pageWidth: 200);
+final _codeFormatter = DartFormatter(pageWidth: 200, languageVersion: DartFormatter.latestLanguageVersion);
 
 abstract class GeneratorBase {
   late final DartEmitter emitter;

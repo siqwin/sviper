@@ -1,3 +1,7 @@
+## 1.2.0
+
+build: update dependencies
+
 ## 1.1.12
 
 build: update dependencies
